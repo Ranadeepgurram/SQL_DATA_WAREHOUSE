@@ -1,17 +1,18 @@
 /*
-============================================================
-Create Database and Schemas
-============================================================
+PURPOSE:
+    This script initializes the DATAWAREHOUSE environment.
+    It checks whether the database already exists and recreates it
+    to ensure a clean and consistent setup for development.
 
-Script Purpose:
-    This script creates a new database named 'DataWarehouse' after checking if it already exists.
-    If the database exists, it is dropped and recreated. Additionally, the script sets up three schemas
-    within the database: 'bronze', 'silver', and 'gold'.
+    The database follows a layered schema approach to organize
+    data at different processing stages:
+        - BRONZE : Raw ingested data
+        - SILVER : Cleaned and transformed data
+        - GOLD   : Analytics-ready data
 
-WARNING:
-    Running this script will drop the entire 'DataWarehouse' database if it exists.
-    All data in the database will be permanently deleted. Proceed with caution
-    and ensure weu have proper backups before running this script.
+IMPORTANT:
+    Executing this script will permanently remove the existing
+    DATAWAREHOUSE database along with all stored data.
 */
 
 
