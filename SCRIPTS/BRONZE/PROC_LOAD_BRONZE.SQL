@@ -14,7 +14,6 @@ PROCESS DETAILS:
     - No transformations or validations are applied at this stage
 
 PARAMETERS:
-    NONE.
     This procedure does not accept input parameters and does not return any values.
 
 USAGE:
