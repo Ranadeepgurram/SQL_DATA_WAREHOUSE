@@ -22,7 +22,7 @@ USAGE:
 */
 
 
-CREATE OR ALTER PROCEDURE BRONZE.LOAD_BRONZE AS
+CREATE OR ALTER PROCEDURE [Bronze].[LOAD_BRONZE] AS
 BEGIN
         DECLARE @START_TIME DATETIME, @END_TIME DATETIME, @BATCHSTARTTIME DATETIME, @BATCHENDTIME DATETIME
 		BEGIN TRY
@@ -89,11 +89,11 @@ BEGIN
 						PRINT'-------------------------------------------';
 
 						SET @START_TIME = GETDATE();
-						PRINT 'TRUNCATING TABLE: [BRONZE].[ERP_LOC_A101]';
-						TRUNCATE TABLE [BRONZE].[ERP_LOC_A101];
+						PRINT 'TRUNCATING TABLE: [Bronze].[ERP_CUST_AZ12]';
+						TRUNCATE TABLE [Bronze].[ERP_CUST_AZ12];
 
-						PRINT 'INSERTING INTO: [BRONZE].[ERP_LOC_A101]';
-						BULK INSERT [Bronze].[ERP_LOC_A101]
+						PRINT 'INSERTING INTO: [Bronze].[ERP_CUST_AZ12]';
+						BULK INSERT [Bronze].[ERP_CUST_AZ12]
 						FROM 'C:\Users\gurra\OneDrive\Desktop\SQL\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
 						with (
 							FIRSTROW = 2,
@@ -152,3 +152,7 @@ BEGIN
 			 PRINT'==========================================='
 		END CATCH
 END
+GO
+
+
+
